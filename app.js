@@ -45,6 +45,10 @@ app.get('/get/:data', (req, res) => {
 
 })
 
+app.get('/*', (req, res) => {
+  res.status(404).json({msg: 'This endpoint is not valid '})
+})
+
 app.listen(port, function() {
   console.log("Server running on port: " + port)
 })
